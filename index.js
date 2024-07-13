@@ -29,14 +29,13 @@ try {
             }
         };
         api.listenMqtt((err, event) => {
-            const args = event.body.split(/\s+/);
 
             if (err) return;
             if (event.body === "/getID") {
                 if (!event.isGroup) {
                 api.sendMessage(`[ 𝖭𝖤𝖷𝖴𝖲 𝖠𝖫𝖳 ]\n- 𝖳𝖧𝖨𝖲 𝖨𝖲 𝖠𝖭 𝖲𝖤𝖱𝖵𝖨𝖢𝖤 𝖡𝖮𝖳 𝖠𝖭𝖣 𝖢𝖠𝖭'𝖳 𝖡𝖤 𝖴𝖲𝖤 𝖮𝖴𝖳𝖲𝖨𝖣𝖤 𝖮𝖥 𝖳𝖧𝖤 𝖦𝖱𝖮𝖴𝖯.\n[ 𝖣𝖠𝖳𝖠 ]\n𝖴𝖲𝖤𝖱 𝖨𝖣: ${event.senderID}`, event.threadID)
                 } else {
-                        api.sendMessage(`Your special ID: ${event.senderID}\nNote: this is only used for verification on NEXUS Script.`, event.threadID)
+                        api.sendMessage(`[ 𝖲𝖯𝖤𝖢𝖨𝖠𝖫 𝖨𝖣 ] 𝖨𝖣: ${event.senderID} \n𝖭𝖮𝖳𝖤: 𝖳𝖧𝖨𝖲 𝖨𝖲 𝖮𝖭𝖫𝖸 𝖴𝖲𝖤𝖣 𝖥𝖮𝖱 𝖵𝖤𝖱𝖨𝖥𝖨𝖢𝖠𝖳𝖨𝖮𝖭.`, event.threadID)
                 }
         }
         })
